@@ -3,6 +3,7 @@ import pandas as pd
 from sklearn.datasets import fetch_california_housing
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
+from pathlib import Path
 import joblib
 def main():
     data = fetch_california_housing()
@@ -17,7 +18,7 @@ def main():
     model.fit(X_train,y_train)
 
     # Save the model
-    os.mkdir("artifacts")
+    Path("artifacts").mkdir(parents=True, exist_ok=True)
     model_path = os.path.join("artifacts", "model.pkl")
     joblib.dump(model, model_path)
 
