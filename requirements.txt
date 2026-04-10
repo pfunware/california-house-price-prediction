@@ -8,3 +8,6 @@ fastapi
 joblib
 
 #MLOPS
+dvc
+dvc_s3
+
